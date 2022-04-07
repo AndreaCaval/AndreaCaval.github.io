@@ -16,6 +16,27 @@ function scrollFunction() {
         mybutton.style.display = "none";
     }
 }
+
+/*==================== ACCORDION SKILLS ====================*/
+const skillsContent = document.getElementsByClassName("skills__content"),
+    skillsHeader = document.querySelectorAll(".skills__header")
+
+function toggleSkills() {
+    let itemClass = this.parentNode.className
+
+    for (let index = 0; index < skillsContent.length; index++) {
+        skillsContent[index].className = "skills__content skills__close"
+    }
+    if (itemClass === "skills__content skills__close") {
+        this.parentNode.className = "skills__content skills__open"
+    }
+
+}
+
+skillsHeader.forEach((el) => {
+    el.addEventListener("click", toggleSkills)
+})
+
 /*==================== QUALIFICATION TABS ====================*/
 const tabs = document.querySelectorAll('[data-target]'),
     tabContents = document.querySelectorAll('[data-content]')
