@@ -2673,7 +2673,7 @@ div.icon-text {
 .image.is-16by9 img,
 .image.is-square .has-ratio,
 .image.is-square img {
-    height: 100%;
+    /* height: 100%; */
     width: 100%
 }
 
@@ -12112,5 +12112,13 @@ screen and (min-width:769px) {
 }
 
 .carousel-cell {
-    width: 100%
+    width: 100%;
+}
+
+.modal-card-body-title{
+    font-weight: bold;
+}
+
+.modal-card-body-indent{
+    text-indent: 0.5em;
 }
