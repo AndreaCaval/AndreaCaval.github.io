@@ -35,6 +35,7 @@ https://flickity.metafizzy.co
 }
 
 .flickity-viewport {
+    height: 350px !important;
     height: 100%;
     overflow: hidden;
     position: relative
