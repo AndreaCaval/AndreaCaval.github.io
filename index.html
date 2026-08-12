@@ -6,7 +6,7 @@
   <title>Andrea Cavalluzzo - Software Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="Andrea Cavalluzzo, full-stack software engineer in Dublin. Backend services and AI features at Rue Gilt Groupe. Rep on Google Play and NexiTab on the Chrome Web Store, built end to end." />
+    content="Andrea Cavalluzzo, full-stack software engineer in Dublin. Backend and full-stack work at Rue Gilt Groupe, plus Rep on Google Play and NexiTab on the Chrome Web Store." />
   <meta name="author" content="Andrea Cavalluzzo" />
   <meta name="theme-color" content="#f4f2f8" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#131320" media="(prefers-color-scheme: dark)" />
@@ -16,7 +16,7 @@
   <meta property="og:url" content="https://andreacaval.github.io/" />
   <meta property="og:title" content="Andrea Cavalluzzo - Software Engineer" />
   <meta property="og:description"
-    content="Full-stack engineer in Dublin. Backend services and AI features by day; a fitness app on Google Play and a Chrome extension on my own time." />
+    content="Full-stack software engineer in Dublin. Python, Django and FastAPI at work; an Android app and a Chrome extension of my own." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -119,11 +119,11 @@
 
           <article class="blk blk-say" style="--d:0ms">
             <h2 class="blk-title">Andrea Cavalluzzo</h2>
-            <h1 class="say">I build software end to end - backend, app, and the listing it ships under.</h1>
+            <h1 class="say">Full-stack software engineer based in Dublin.</h1>
             <p class="say-sub">
-              By day: backend services and AI-powered features for a flash-sale e-commerce platform in Dublin.
-              On my own time: a fitness app on Google Play and a Chrome extension that replaces the new tab,
-              both of them mine from the database up.
+              I work on backend services and AI-powered features at Rue Gilt Groupe, mostly in Python, Django and
+              FastAPI, with React on the front end. Outside work I build and release my own apps: Rep, an Android
+              fitness app, and NexiTab, a Chrome extension.
             </p>
           </article>
 
@@ -144,7 +144,7 @@
           </article>
 
           <article class="blk blk-links" style="--d:140ms">
-            <h2 class="blk-title">Shortcuts</h2>
+            <h2 class="blk-title">Links</h2>
             <ul class="tiles">
               <li>
                 <a href="mailto:andrea.cavalluzzo2000@gmail.com">
@@ -182,7 +182,7 @@
           </article>
 
           <article class="blk blk-stack" style="--d:210ms">
-            <h2 class="blk-title">Stack I reach for</h2>
+            <h2 class="blk-title">Stack</h2>
             <ul class="chips chips-lg">
               <li>Python</li>
               <li>Django</li>
@@ -204,9 +204,8 @@
       <div class="wrap">
         <div class="sec-head reveal">
           <p class="eyebrow">Projects</p>
-          <h2 class="sec-title">Two products I own from the database up</h2>
-          <p class="lede">Both are live, both have real users, and both are mine end to end - schema, API, client,
-            release and the store listing.</p>
+          <h2 class="sec-title">Apps I've built and released</h2>
+          <p class="lede">Two projects of my own, both published in their stores and maintained by me.</p>
         </div>
 
         <!-- Rep -->
@@ -216,7 +215,7 @@
               <img class="proj-mark" src="img/projects/rep/rep-mark.svg" alt="Rep app icon" width="52" height="52" />
               <div>
                 <h3 class="proj-name">Rep</h3>
-                <p class="proj-kind">Android app · FastAPI backend · on Google Play</p>
+                <p class="proj-kind">Android app · FastAPI backend · Google Play</p>
               </div>
             </div>
             <div class="proj-links">
@@ -232,25 +231,19 @@
           </header>
 
           <div class="proj-cols">
-            <p class="proj-lead">Pick a target - 100 pull-ups for time, most push-ups in two minutes - log every rep
-              against a live timer, and see who is still standing at the end of the month. Rep turns training into
-              something you compete at, with friends or against the whole leaderboard.</p>
+            <p class="proj-lead">A fitness app for workout challenges. You set a goal, log each set against a timer,
+              and compare results on a leaderboard. I built the Android app, the backend and the website.</p>
             <ul class="notes">
-              <li><b>Offline where it counts.</b> Open the app in a basement gym with no signal, track a session and log
-                it - the write queues in Room and drains through WorkManager when you reconnect.</li>
-              <li><b>Five ways to define a challenge.</b> Rep goals, time limits, unbroken sets, max rounds, or free
-                logging - one schema, one tracking screen.</li>
-              <li><b>Built to survive its own updates.</b> New challenge types are withheld from older clients so one
-                unknown enum can't blank a whole list.</li>
-              <li><b>Everything around the app too.</b> Postgres and Alembic migrations, JWT and Google sign-in, Firebase
-                push, Crashlytics, an admin dashboard, and the marketing site.</li>
+              <li>Kotlin and Jetpack Compose on Android, FastAPI and PostgreSQL behind it.</li>
+              <li>Workouts can be logged offline and sync when the phone is back online.</li>
+              <li>Five challenge formats, with global or friends-only leaderboards.</li>
             </ul>
           </div>
 
           <ul class="shots" aria-label="Rep screenshots">
             <li>
               <button class="phone" type="button" data-shot="img/projects/rep/00-home.png"
-                data-cap="Feed - what everyone logged today">
+                data-cap="Feed of logged sessions">
                 <img src="img/projects/rep/00-home.png" alt="Rep home feed showing logged sessions" loading="lazy"
                   width="620" height="1383" />
               </button>
@@ -258,7 +251,7 @@
             </li>
             <li>
               <button class="phone" type="button" data-shot="img/projects/rep/02-discover.png"
-                data-cap="Discover - search, filters and curated picks">
+                data-cap="Discover: search, filters and categories">
                 <img src="img/projects/rep/02-discover.png" alt="Rep discover screen with challenge categories"
                   loading="lazy" width="620" height="1383" />
               </button>
@@ -266,7 +259,7 @@
             </li>
             <li>
               <button class="phone" type="button" data-shot="img/projects/rep/06-challenge-pullups100.png"
-                data-cap="Challenge - rules, definition and the leaderboard">
+                data-cap="Challenge detail with leaderboard">
                 <img src="img/projects/rep/06-challenge-pullups100.png"
                   alt="Rep challenge detail with leaderboard podium" loading="lazy" width="620" height="1383" />
               </button>
@@ -274,7 +267,7 @@
             </li>
             <li>
               <button class="phone" type="button" data-shot="img/projects/rep/07-tracking-in-progress.png"
-                data-cap="Tracking - live timer, one tap per set">
+                data-cap="Tracking a session">
                 <img src="img/projects/rep/07-tracking-in-progress.png"
                   alt="Rep live tracking screen with timer and sets" loading="lazy" width="620" height="1383" />
               </button>
@@ -315,18 +308,12 @@
           </header>
 
           <div class="proj-cols">
-            <p class="proj-lead">The Chrome new tab, rebuilt as a page you arrange yourself: shortcut blocks for the
-              sites you actually open, widgets you drag and resize onto a grid, and everything synced across the machines
-              you sign in on.</p>
+            <p class="proj-lead">A replacement for the Chrome new tab page. You group the sites you use into blocks,
+              add widgets like timers, notes and weather, and arrange both on a grid that syncs across your devices.</p>
             <ul class="notes">
-              <li><b>A grid, not a template.</b> Blocks and widgets are positioned and resized freely, and the layout
-                travels with your account.</li>
-              <li><b>Keyboard first.</b> Ctrl+K opens a command palette for every action, and each command can be bound
-                to your own shortcut.</li>
-              <li><b>Timers that keep running.</b> Minimise a timer, Pomodoro or countdown to the tray and it finishes
-                in the background, then tells you.</li>
-              <li><b>Plugged into what you use.</b> History, bookmarks and top sites in a side panel, Notion blocks as
-                live to-do lists, plus import and export of your whole setup.</li>
+              <li>Blocks and widgets are dragged and resized freely; layouts export and import.</li>
+              <li>Timers, Pomodoro and countdowns keep running in the background.</li>
+              <li>Ctrl+K command palette, plus history, bookmarks and Notion to-do lists in a side panel.</li>
             </ul>
           </div>
 
@@ -336,7 +323,7 @@
               <span class="browser-url">chrome://newtab</span>
             </div>
             <button class="browser-shot" type="button" data-shot="img/projects/nexitab/dashboard.png"
-              data-cap="NexiTab - shortcut blocks on a layout you arrange yourself">
+              data-cap="NexiTab new tab page">
               <img src="img/projects/nexitab/dashboard.png" alt="NexiTab new tab dashboard with custom shortcut blocks"
                 loading="lazy" width="1600" height="759" />
             </button>
@@ -362,8 +349,7 @@
                 <img class="arc-thumb" src="img/archive/swordio.png" alt="" loading="lazy" width="720" height="400" />
                 <div class="arc-main">
                   <h4>SwordIo</h4>
-                  <p>Control panel for a purchase-automation tool: profiles, retailer tasks and settings in one React
-                    interface.</p>
+                  <p>React interface for a purchase-automation tool: profiles, retailer modules and settings.</p>
                 </div>
                 <p class="arc-stack">React</p>
                 <span class="arc-go">
@@ -378,7 +364,7 @@
                 <img class="arc-thumb" src="img/archive/mangatime.png" alt="" loading="lazy" width="720" height="360" />
                 <div class="arc-main">
                   <h4>MangaTime</h4>
-                  <p>Reading tracker built around Python scrapers, a Node API and a containerised Angular front end.</p>
+                  <p>Dashboard for tracking manga: titles, last chapter read and status.</p>
                 </div>
                 <p class="arc-stack">Angular · Node · MongoDB</p>
                 <span class="arc-none" aria-hidden="true"></span>
@@ -390,8 +376,7 @@
                   height="400" />
                 <div class="arc-main">
                   <h4>CavaScripts</h4>
-                  <p>The site that sold the extension - supported retailers, pricing and the FAQ people actually asked.
-                  </p>
+                  <p>Landing page for the extension, with the list of supported sites and an FAQ.</p>
                 </div>
                 <p class="arc-stack">HTML · CSS · JS</p>
                 <span class="arc-go">
@@ -406,7 +391,7 @@
                 <img class="arc-thumb" src="img/archive/mooncalls.png" alt="" loading="lazy" width="720" height="400" />
                 <div class="arc-main">
                   <h4>MoonCalls</h4>
-                  <p>A one-page site for a small studio: services, contact and nothing that needed a framework.</p>
+                  <p>Single-page site for a private members group: home, services and FAQ.</p>
                 </div>
                 <p class="arc-stack">HTML · CSS · JS</p>
                 <span class="arc-go">
@@ -426,7 +411,7 @@
       <div class="wrap">
         <div class="sec-head reveal">
           <p class="eyebrow">Experience</p>
-          <h2 class="sec-title">Where I've done it</h2>
+          <h2 class="sec-title">Where I've worked</h2>
         </div>
 
         <ol class="roles">
@@ -438,12 +423,13 @@
               <p class="role-about">Off-price e-commerce group behind Rue La La, Gilt and ShopSimon - three flash-sale
                 platforms connecting millions of members to 5,000+ luxury brands.</p>
               <ul class="notes">
-                <li>Backend services in Python, Django and FastAPI for flash-sale operations, including moving legacy
-                  APIs onto a new FastAPI service.</li>
-                <li>Customer-facing work: passwordless login, self-service order management and checkout improvements.
+                <li>Develop and maintain backend services in Python, Django and FastAPI for flash-sale operations,
+                  including migrating legacy APIs to a new FastAPI service.</li>
+                <li>Implement customer-facing features such as passwordless login, self-service order management and
+                  checkout improvements.</li>
+                <li>Build front-end components in React and deliver features end to end.</li>
+                <li>Monitor system health and application performance with Datadog; work with data in SQL databases.
                 </li>
-                <li>React components on the front end, so features land end to end rather than stopping at the API.</li>
-                <li>System health and performance watched in Datadog; data handled through SQL.</li>
               </ul>
               <ul class="chips">
                 <li>Python</li>
@@ -464,10 +450,11 @@
               <p class="role-about">Interactive 2D/3D spare-parts catalogue software used by 600+ manufacturing,
                 agriculture and industrial companies worldwide.</p>
               <ul class="notes">
-                <li>Catalogue platform features in AngularJS and C#/.NET.</li>
-                <li>3D visualisation with BabylonJS, so customers could explore parts in the browser instead of reading
-                  a diagram.</li>
-                <li>Module work and interface improvements across the catalogue management system.</li>
+                <li>Developed features for the catalogue platform in AngularJS and C#/.NET.</li>
+                <li>Contributed to 3D visualisation with BabylonJS, letting customers explore parts in the browser.
+                </li>
+                <li>Worked on module development and interface improvements across the catalogue management system.
+                </li>
               </ul>
               <ul class="chips">
                 <li>AngularJS</li>
@@ -483,13 +470,13 @@
             <div class="role-body">
               <h3 class="role-what">Founder &amp; Developer <span class="role-at">CavaScripts</span></h3>
               <p class="role-where">Self-employed · San Mauro Pascoli, Italy</p>
-              <p class="role-about">A paid Chrome extension for automating online purchases, and everything a paid
-                product needs around it.</p>
+              <p class="role-about">My own product: a Chrome extension for automating online purchases, sold by
+                subscription.</p>
               <ul class="notes">
                 <li>Built and launched the extension in HTML, CSS and JavaScript.</li>
-                <li>Authentication dashboard with Stripe for subscriptions and billing.</li>
-                <li>Real-time stock monitoring through custom Python scrapers and an alerting system.</li>
-                <li>Ran the whole lifecycle - development, deployment, payments and customer support.</li>
+                <li>Developed an authentication dashboard with Stripe for subscriptions and billing.</li>
+                <li>Created real-time product monitoring with custom Python scrapers and alerts.</li>
+                <li>Managed the full lifecycle: development, deployment, payments and customer support.</li>
               </ul>
               <ul class="chips">
                 <li>JavaScript</li>
@@ -508,25 +495,26 @@
       <div class="wrap">
         <div class="sec-head reveal">
           <p class="eyebrow">About</p>
-          <h2 class="sec-title">Shipping, not just writing code</h2>
+          <h2 class="sec-title">A bit about me</h2>
         </div>
 
         <div class="about">
           <div class="about-me reveal">
             <div class="about-text">
-              <p>I'm a full-stack engineer in Dublin. At work that means backend services and AI-powered features for a
-                flash-sale e-commerce platform, plus the React that sits in front of them.</p>
-              <p>Before that, 2D/3D catalogue software in Italy - and, while still at school, a couple of years running
-                my own paid Chrome extension. That's where I learned that writing the code is the easy half: releases,
-                billing, support tickets and monitoring are the rest of it.</p>
-              <p>Most of my side projects start because I wanted the thing to exist. Outside the editor I'm in the gym,
-                printing parts I probably don't need, and slowly automating the flat.</p>
+              <p>I'm a software engineer in Dublin. At Rue Gilt Groupe I work on backend services and AI-powered
+                features for the group's flash-sale platforms, mainly in Python, Django and FastAPI, along with the
+                React in front of them.</p>
+              <p>Before moving to Ireland I worked on 2D/3D spare-parts catalogue software in Italy, and from 2021 to
+                2022 I ran CavaScripts, a paid Chrome extension of my own. That one taught me the parts of a product
+                that come after the code: releases, payments and support.</p>
+              <p>I build side projects because I want to use them myself, which is where Rep and NexiTab came from.
+                Outside work I train, 3D print, and spend time on home automation and hardware.</p>
             </div>
           </div>
 
           <div class="about-side reveal">
             <div class="panel">
-              <h3 class="panel-title">Toolbox</h3>
+              <h3 class="panel-title">Skills</h3>
               <dl class="tool">
                 <div>
                   <dt>Languages</dt>
@@ -541,7 +529,7 @@
                   <dd>Git · GitHub · GitLab · Docker · Datadog · Firebase · Stripe · WordPress</dd>
                 </div>
                 <div>
-                  <dt>Around it</dt>
+                  <dt>Other</dt>
                   <dd>REST APIs · CI/CD · e-commerce · AI/ML features · 3D visualisation</dd>
                 </div>
               </dl>
@@ -555,7 +543,7 @@
             </div>
 
             <div class="panel">
-              <h3 class="panel-title">Off the clock</h3>
+              <h3 class="panel-title">Interests</h3>
               <ul class="chips">
                 <li>Training</li>
                 <li>Home automation</li>
@@ -573,7 +561,7 @@
       <div class="wrap">
         <div class="end reveal">
           <p class="eyebrow">Contact</p>
-          <h2 class="end-line">Got something worth building? I'd like to hear about it.</h2>
+          <h2 class="end-line">Get in touch.</h2>
           <a class="end-mail" href="mailto:andrea.cavalluzzo2000@gmail.com">andrea.cavalluzzo2000@gmail.com</a>
           <div class="end-links">
             <a href="https://github.com/AndreaCaval" target="_blank" rel="noopener">
@@ -600,7 +588,7 @@
   <footer class="foot">
     <div class="wrap foot-in">
       <p>Dublin, Ireland</p>
-      <p>Hand-built with HTML, CSS and a little JavaScript</p>
+      <p>Built with HTML, CSS and JavaScript</p>
       <p>© <span id="year">2026</span> Andrea Cavalluzzo</p>
     </div>
   </footer>
