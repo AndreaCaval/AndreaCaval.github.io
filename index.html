@@ -2,745 +2,621 @@
 <html lang="en">
 
 <head>
-  <title>devfolio</title>
+  <meta charset="utf-8" />
+  <title>Andrea Cavalluzzo - Software Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="img/foto.jpg" type="image/x-icon" />
-  <link rel="stylesheet" href="css/main.bundle.css" />
-  <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
+  <meta name="description"
+    content="Andrea Cavalluzzo, full-stack software engineer in Dublin. Backend services and AI features at Rue Gilt Groupe. Rep on Google Play and NexiTab on the Chrome Web Store, built end to end." />
+  <meta name="author" content="Andrea Cavalluzzo" />
+  <meta name="theme-color" content="#f4f2f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#131320" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://andreacaval.github.io/" />
+  <meta property="og:title" content="Andrea Cavalluzzo - Software Engineer" />
+  <meta property="og:description"
+    content="Full-stack engineer in Dublin. Backend services and AI features by day; a fitness app on Google Play and a Chrome extension on my own time." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..600&family=JetBrains+Mono:wght@400..500&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    // Set the theme before first paint so there is no flash of the wrong palette.
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) { }
+      var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    })();
+  </script>
 </head>
 
 <body>
-  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <div class="navbar-item is-hidden-desktop">
-        <a href="https://github.com/AndreaCaval" class="icon is-large has-text-light">
-          <i class="fab fa-2x fa-github"></i>
-        </a>
-      </div>
-    </div>
-    <div class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <a href="https://github.com/AndreaCaval" class="icon is-large has-text-light">
-            <i class="fab fa-2x fa-github"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <section class="hero is-primary">
-    <div class="hero-body">
-      <div class="container">
-        <div class="level">
-          <div class="level-item has-text-centered">
-            <figure class="image is-128x128">
-              <img src="img/foto.jpg" />
-            </figure>
-          </div>
+  <!-- icon sprite -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-github" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.55v-1.94c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .3.2.66.79.55A11.5 11.5 0 0 0 23.5 12A11.5 11.5 0 0 0 12 .5Z" />
+    </symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05A4.2 4.2 0 0 1 17.6 8.7c3.1 0 3.9 1.9 3.9 5.1V21h-4v-6.3c0-1.5-.5-2.6-1.9-2.6-1.1 0-1.7.7-2 1.5-.1.2-.1.6-.1.9V21h-4V9Z" />
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"
+        d="M3 6.5h18v11H3zM3.4 7l8.6 6 8.6-6" />
+    </symbol>
+    <symbol id="i-file" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"
+        d="M6 2.8h8l4 4v14.4H6zM14 2.8v4.2h4M9 12h6M9 15.5h6" />
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"
+        d="M12 4.2V2m0 20v-2.2M4.2 12H2m20 0h-2.2M6.5 6.5 5 5m14 14-1.5-1.5m0-11L19 5M5 19l1.5-1.5" />
+      <circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.9" />
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"
+        d="M20 14.4A8.6 8.6 0 0 1 9.6 4a8.4 8.4 0 1 0 10.4 10.4Z" />
+    </symbol>
+    <symbol id="i-out" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        d="M7 17 17 7M9 7h8v8" />
+    </symbol>
+  </svg>
+
+  <header class="bar">
+    <a class="bar-mark" href="#top">
+      <span class="bar-mono">AC</span>
+      <span class="bar-name">Andrea Cavalluzzo</span>
+    </a>
+    <nav class="bar-nav" aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="tbtn" type="button" id="theme" aria-label="Switch to dark theme">
+      <svg class="tbtn-sun" aria-hidden="true">
+        <use href="#i-sun" />
+      </svg>
+      <svg class="tbtn-moon" aria-hidden="true">
+        <use href="#i-moon" />
+      </svg>
+    </button>
+    <button class="mbtn" type="button" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="sheet">
+      <span class="mbtn-bars" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </header>
+
+  <div class="sheet" id="sheet" hidden>
+    <nav class="sheet-nav" aria-label="Menu">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="sheet-links">
+      <a href="mailto:andrea.cavalluzzo2000@gmail.com">email</a>
+      <a href="https://github.com/AndreaCaval" target="_blank" rel="noopener">github</a>
+      <a href="https://www.linkedin.com/in/andrea-cavalluzzo-a0578b251" target="_blank" rel="noopener">linkedin</a>
+      <a href="Curriculum_2026.pdf" download>cv</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ══ hero: a board of blocks, the way NexiTab lays out a new tab ══ -->
+    <section class="hero" id="top">
+      <div class="wrap">
+        <div class="board">
+
+          <article class="blk blk-say" style="--d:0ms">
+            <h2 class="blk-title">Andrea Cavalluzzo</h2>
+            <h1 class="say">I build software end to end - backend, app, and the listing it ships under.</h1>
+            <p class="say-sub">
+              By day: backend services and AI-powered features for a flash-sale e-commerce platform in Dublin.
+              On my own time: a fitness app on Google Play and a Chrome extension that replaces the new tab,
+              both of them mine from the database up.
+            </p>
+          </article>
+
+          <article class="blk blk-now" style="--d:70ms">
+            <h2 class="blk-title">Now</h2>
+            <p class="now-role"><span class="now-live" aria-hidden="true"></span>Software Engineer</p>
+            <p class="now-co">Rue Gilt Groupe</p>
+            <dl class="now-meta">
+              <div>
+                <dt>Since</dt>
+                <dd>Sep 2024</dd>
+              </div>
+              <div>
+                <dt>Based in</dt>
+                <dd>Dublin, IE <span class="now-clock" id="clock" aria-label="Local time in Dublin"></span></dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="blk blk-links" style="--d:140ms">
+            <h2 class="blk-title">Shortcuts</h2>
+            <ul class="tiles">
+              <li>
+                <a href="mailto:andrea.cavalluzzo2000@gmail.com">
+                  <span class="tile"><svg aria-hidden="true">
+                      <use href="#i-mail" />
+                    </svg></span>
+                  <span class="tile-cap">email</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/AndreaCaval" target="_blank" rel="noopener">
+                  <span class="tile"><svg aria-hidden="true">
+                      <use href="#i-github" />
+                    </svg></span>
+                  <span class="tile-cap">github</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/andrea-cavalluzzo-a0578b251" target="_blank" rel="noopener">
+                  <span class="tile"><svg aria-hidden="true">
+                      <use href="#i-linkedin" />
+                    </svg></span>
+                  <span class="tile-cap">linkedin</span>
+                </a>
+              </li>
+              <li>
+                <a href="Curriculum_2026.pdf" download>
+                  <span class="tile"><svg aria-hidden="true">
+                      <use href="#i-file" />
+                    </svg></span>
+                  <span class="tile-cap">cv</span>
+                </a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="blk blk-stack" style="--d:210ms">
+            <h2 class="blk-title">Stack I reach for</h2>
+            <ul class="chips chips-lg">
+              <li>Python</li>
+              <li>Django</li>
+              <li>FastAPI</li>
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Kotlin</li>
+              <li>PostgreSQL</li>
+              <li>Datadog</li>
+            </ul>
+          </article>
+
         </div>
-        <div class="columns has-text-centered">
-          <div class="column">
-            <h1 class="title is-1">Andrea Cavalluzzo</h1>
-            <h2 class="subtitle"></h2>
-            <!--<p>
-              <a href="docs/Curriculum.pdf" download class="icon has-text-light">
-                <i class="fas fa-file-word"></i> <strong>Curriculum</strong>
+      </div>
+    </section>
+
+    <!-- ══ projects ══ -->
+    <section class="sec" id="projects">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Projects</p>
+          <h2 class="sec-title">Two products I own from the database up</h2>
+          <p class="lede">Both are live, both have real users, and both are mine end to end - schema, API, client,
+            release and the store listing.</p>
+        </div>
+
+        <!-- Rep -->
+        <article class="proj reveal">
+          <header class="proj-top">
+            <div class="proj-id">
+              <img class="proj-mark" src="img/projects/rep/rep-mark.svg" alt="Rep app icon" width="52" height="52" />
+              <div>
+                <h3 class="proj-name">Rep</h3>
+                <p class="proj-kind">Android app · FastAPI backend · on Google Play</p>
+              </div>
+            </div>
+            <div class="proj-links">
+              <a class="btn btn-fill" href="https://play.google.com/store/apps/details?id=com.workoutchallenge.app"
+                target="_blank" rel="noopener">Google Play <svg aria-hidden="true">
+                  <use href="#i-out" />
+                </svg></a>
+              <a class="btn" href="https://workout-challenge.netlify.app" target="_blank" rel="noopener">Website <svg
+                  aria-hidden="true">
+                  <use href="#i-out" />
+                </svg></a>
+            </div>
+          </header>
+
+          <div class="proj-cols">
+            <p class="proj-lead">Pick a target - 100 pull-ups for time, most push-ups in two minutes - log every rep
+              against a live timer, and see who is still standing at the end of the month. Rep turns training into
+              something you compete at, with friends or against the whole leaderboard.</p>
+            <ul class="notes">
+              <li><b>Offline where it counts.</b> Open the app in a basement gym with no signal, track a session and log
+                it - the write queues in Room and drains through WorkManager when you reconnect.</li>
+              <li><b>Five ways to define a challenge.</b> Rep goals, time limits, unbroken sets, max rounds, or free
+                logging - one schema, one tracking screen.</li>
+              <li><b>Built to survive its own updates.</b> New challenge types are withheld from older clients so one
+                unknown enum can't blank a whole list.</li>
+              <li><b>Everything around the app too.</b> Postgres and Alembic migrations, JWT and Google sign-in, Firebase
+                push, Crashlytics, an admin dashboard, and the marketing site.</li>
+            </ul>
+          </div>
+
+          <ul class="shots" aria-label="Rep screenshots">
+            <li>
+              <button class="phone" type="button" data-shot="img/projects/rep/00-home.png"
+                data-cap="Feed - what everyone logged today">
+                <img src="img/projects/rep/00-home.png" alt="Rep home feed showing logged sessions" loading="lazy"
+                  width="620" height="1383" />
+              </button>
+              <span class="phone-cap">Feed</span>
+            </li>
+            <li>
+              <button class="phone" type="button" data-shot="img/projects/rep/02-discover.png"
+                data-cap="Discover - search, filters and curated picks">
+                <img src="img/projects/rep/02-discover.png" alt="Rep discover screen with challenge categories"
+                  loading="lazy" width="620" height="1383" />
+              </button>
+              <span class="phone-cap">Discover</span>
+            </li>
+            <li>
+              <button class="phone" type="button" data-shot="img/projects/rep/06-challenge-pullups100.png"
+                data-cap="Challenge - rules, definition and the leaderboard">
+                <img src="img/projects/rep/06-challenge-pullups100.png"
+                  alt="Rep challenge detail with leaderboard podium" loading="lazy" width="620" height="1383" />
+              </button>
+              <span class="phone-cap">Challenge</span>
+            </li>
+            <li>
+              <button class="phone" type="button" data-shot="img/projects/rep/07-tracking-in-progress.png"
+                data-cap="Tracking - live timer, one tap per set">
+                <img src="img/projects/rep/07-tracking-in-progress.png"
+                  alt="Rep live tracking screen with timer and sets" loading="lazy" width="620" height="1383" />
+              </button>
+              <span class="phone-cap">Tracking</span>
+            </li>
+          </ul>
+
+          <ul class="chips">
+            <li>Kotlin</li>
+            <li>Jetpack Compose</li>
+            <li>Hilt</li>
+            <li>Room</li>
+            <li>WorkManager</li>
+            <li>FastAPI</li>
+            <li>PostgreSQL</li>
+            <li>Alembic</li>
+            <li>Firebase</li>
+          </ul>
+        </article>
+
+        <!-- NexiTab -->
+        <article class="proj reveal">
+          <header class="proj-top">
+            <div class="proj-id">
+              <span class="proj-mark proj-mark-nx" aria-hidden="true">N</span>
+              <div>
+                <h3 class="proj-name">NexiTab</h3>
+                <p class="proj-kind">Chrome extension · Chrome Web Store</p>
+              </div>
+            </div>
+            <div class="proj-links">
+              <a class="btn btn-fill"
+                href="https://chromewebstore.google.com/detail/nexitab/pdomgbhdmchigaijnijlhjmpndcodikc" target="_blank"
+                rel="noopener">Chrome Web Store <svg aria-hidden="true">
+                  <use href="#i-out" />
+                </svg></a>
+            </div>
+          </header>
+
+          <div class="proj-cols">
+            <p class="proj-lead">The Chrome new tab, rebuilt as a page you arrange yourself: shortcut blocks for the
+              sites you actually open, widgets you drag and resize onto a grid, and everything synced across the machines
+              you sign in on.</p>
+            <ul class="notes">
+              <li><b>A grid, not a template.</b> Blocks and widgets are positioned and resized freely, and the layout
+                travels with your account.</li>
+              <li><b>Keyboard first.</b> Ctrl+K opens a command palette for every action, and each command can be bound
+                to your own shortcut.</li>
+              <li><b>Timers that keep running.</b> Minimise a timer, Pomodoro or countdown to the tray and it finishes
+                in the background, then tells you.</li>
+              <li><b>Plugged into what you use.</b> History, bookmarks and top sites in a side panel, Notion blocks as
+                live to-do lists, plus import and export of your whole setup.</li>
+            </ul>
+          </div>
+
+          <figure class="browser">
+            <div class="browser-bar" aria-hidden="true">
+              <span class="browser-dots"><i></i><i></i><i></i></span>
+              <span class="browser-url">chrome://newtab</span>
+            </div>
+            <button class="browser-shot" type="button" data-shot="img/projects/nexitab/dashboard.png"
+              data-cap="NexiTab - shortcut blocks on a layout you arrange yourself">
+              <img src="img/projects/nexitab/dashboard.png" alt="NexiTab new tab dashboard with custom shortcut blocks"
+                loading="lazy" width="1600" height="759" />
+            </button>
+          </figure>
+
+          <ul class="chips">
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>Chrome APIs</li>
+            <li>react-grid-layout</li>
+            <li>MUI</li>
+            <li>Webpack</li>
+            <li>Notion API</li>
+          </ul>
+        </article>
+
+        <!-- archive -->
+        <div class="arc reveal">
+          <h3 class="arc-title">Earlier work</h3>
+          <ul class="arc-list">
+            <li>
+              <a class="arc-row" href="https://swordio.onrender.com/" target="_blank" rel="noopener">
+                <img class="arc-thumb" src="img/archive/swordio.png" alt="" loading="lazy" width="720" height="400" />
+                <div class="arc-main">
+                  <h4>SwordIo</h4>
+                  <p>Control panel for a purchase-automation tool: profiles, retailer tasks and settings in one React
+                    interface.</p>
+                </div>
+                <p class="arc-stack">React</p>
+                <span class="arc-go">
+                  <svg aria-hidden="true">
+                    <use href="#i-out" />
+                  </svg>
+                </span>
               </a>
-            </p> -->
-          </div>
+            </li>
+            <li>
+              <div class="arc-row">
+                <img class="arc-thumb" src="img/archive/mangatime.png" alt="" loading="lazy" width="720" height="360" />
+                <div class="arc-main">
+                  <h4>MangaTime</h4>
+                  <p>Reading tracker built around Python scrapers, a Node API and a containerised Angular front end.</p>
+                </div>
+                <p class="arc-stack">Angular · Node · MongoDB</p>
+                <span class="arc-none" aria-hidden="true"></span>
+              </div>
+            </li>
+            <li>
+              <a class="arc-row" href="https://cavascripts.netlify.app/" target="_blank" rel="noopener">
+                <img class="arc-thumb" src="img/archive/cavascripts.png" alt="" loading="lazy" width="720"
+                  height="400" />
+                <div class="arc-main">
+                  <h4>CavaScripts</h4>
+                  <p>The site that sold the extension - supported retailers, pricing and the FAQ people actually asked.
+                  </p>
+                </div>
+                <p class="arc-stack">HTML · CSS · JS</p>
+                <span class="arc-go">
+                  <svg aria-hidden="true">
+                    <use href="#i-out" />
+                  </svg>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="arc-row" href="https://mooncalls.netlify.app/" target="_blank" rel="noopener">
+                <img class="arc-thumb" src="img/archive/mooncalls.png" alt="" loading="lazy" width="720" height="400" />
+                <div class="arc-main">
+                  <h4>MoonCalls</h4>
+                  <p>A one-page site for a small studio: services, contact and nothing that needed a framework.</p>
+                </div>
+                <p class="arc-stack">HTML · CSS · JS</p>
+                <span class="arc-go">
+                  <svg aria-hidden="true">
+                    <use href="#i-out" />
+                  </svg>
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- about me -->
-  <section class="section">
-    <div class="container">
-      <h1 class="title">About Me</h1>
-      <hr />
-      <p>
-        I am passionate about sports, fitness, and technology. I love
-        experimenting with home automation and 3D printing to create
-        innovative solutions. Both hardware and software in the field of
-        computer science are my passions, and I enjoy exploring the latest
-        advancements. I'm always ready for new challenges and exciting
-        discoveries in these areas I love.
-      </p>
-    </div>
-  </section>
+    <!-- ══ experience ══ -->
+    <section class="sec sec-alt" id="experience">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Experience</p>
+          <h2 class="sec-title">Where I've done it</h2>
+        </div>
 
-  <!-- Experience -->
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Experience</h1>
-      <hr />
-      <!-- ComponentsEngine -->
-      <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="img/experience/componentsengine.jpeg" />
-              </figure>
+        <ol class="roles">
+          <li class="role reveal">
+            <p class="role-when"><time datetime="2024-09">Sep 2024</time> - Present</p>
+            <div class="role-body">
+              <h3 class="role-what">Software Engineer <span class="role-at">Rue Gilt Groupe</span></h3>
+              <p class="role-where">Full-time · Hybrid · Dublin, Ireland</p>
+              <p class="role-about">Off-price e-commerce group behind Rue La La, Gilt and ShopSimon - three flash-sale
+                platforms connecting millions of members to 5,000+ luxury brands.</p>
+              <ul class="notes">
+                <li>Backend services in Python, Django and FastAPI for flash-sale operations, including moving legacy
+                  APIs onto a new FastAPI service.</li>
+                <li>Customer-facing work: passwordless login, self-service order management and checkout improvements.
+                </li>
+                <li>React components on the front end, so features land end to end rather than stopping at the API.</li>
+                <li>System health and performance watched in Datadog; data handled through SQL.</li>
+              </ul>
+              <ul class="chips">
+                <li>Python</li>
+                <li>Django</li>
+                <li>FastAPI</li>
+                <li>React</li>
+                <li>SQL</li>
+                <li>Datadog</li>
+              </ul>
             </div>
-            <div class="media-content">
-              <p class="title is-4">Web Developer - ComponentsEngine</p>
-              <p class="subtitle is-6">
-                <time datetime="2022-10">April 2024</time> -
-                <time datetime="2022-11">Present</time>
-              </p>
-            </div>
-          </div>
-          <div class="content">
-            <ul>
-              <li>Front-Office: Designed and implemented an e-commerce platform enabling companies to manage post-sales
-                and
-                allowing their clients to consult and purchase products and spare parts from 2D and 3D catalogs.</li>
-              <li>Back-Office: Created a management system allowing for user management, data entry, and various
-                administrative functions.</li>
-            </ul>
-            <div class="tags">
-              <span class="tag">Angular</span>
-              <span class="tag">C#</span>
-              <span class="tag">SQL</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br />
-      <!-- Hi-Net -->
-      <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="img/experience/hinet.jpeg" />
-              </figure>
-            </div>
-            <div class="media-content">
-              <p class="title is-4">Technical Analyst Programmer - Hi-Net srl</p>
-              <p class="subtitle is-6">
-                <time datetime="2022-10">February 2024</time> -
-                <time datetime="2022-11">April 2024</time>
-              </p>
-            </div>
-          </div>
-          <div class="content">
-            <p>Website development using WordPress and custom module development for CRM</p>
-            <div class="tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">PHP</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br />
-      <!-- Technogym -->
-      <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="img/experience/technogympng.png" />
-              </figure>
-            </div>
-            <div class="media-content">
-              <p class="title is-4">Mechanical fitter - Technogym SPA</p>
-              <p class="subtitle is-6">
-                <time datetime="2022-10">October 2022</time> -
-                <time datetime="2022-11">November 2022</time>
-              </p>
-            </div>
-          </div>
-          <div class="content">
-            <p>Mechanical fitter of gym equipment</p>
-          </div>
-        </div>
-      </div>
-      <br />
-      <!-- CavaScripts -->
-      <div class="card">
-        <div class="card-content modal-trigger" data-target="project-10-modal">
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="img/experience/iconpk.png" />
-              </figure>
-            </div>
-            <div class="media-content">
-              <p class="title is-4">
-                Founder & Developer - CavaScripts
-              </p>
-              <!-- <a href="https://cavascripts.com/" target="_blank" style="color: black;"></a>  -->
-              <p class="subtitle is-6">
-                <time datetime="2021-3">March 2021</time> -
-                <time datetime="2022-8">August 2022</time>
-              </p>
-            </div>
-          </div>
-          <div class="content">
-            <ul>
-              <li> Development of a Chrome extension for automating online product purchases using HTML CSS &
-                JavaScript.</li>
-              <li> Authentication via an external dashboard with Stripe integration.</li>
-              <li> Real-time product monitoring using custom Python-based monitors.</li>
-            </ul>
-            <div class="tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">Python</span>
-            </div>
-            <p style="text-align: end">Find out more</p>
-          </div>
-        </div>
-      </div>
-      <br />
-      <!-- AUSL Romagna -->
-      <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="img/experience/ausl.png" />
-              </figure>
-            </div>
-            <div class="media-content">
-              <p class="title is-4">
-                Computer systems technician - AUSL Romagna, Cesena (Italia)
-              </p>
-              <p class="subtitle is-6">
-                <time datetime="2018-12">December 2018</time> -
-                <time datetime="2018-12">December 2018</time>
-              </p>
-            </div>
-          </div>
-          <div class="content">
-            <p>School-work alternation internship</p>
-            <ul>
-              <li>Technical assistance</li>
-              <li>PC assembly</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+          </li>
 
-  <!-- projects -->
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Projects</h1>
-      <hr />
-      <div class="tile is-ancestor">
-        <div class="tile is-vertical is-12">
-          <div class="tile">
-            <div class="tile is-parent">
-              <article class="tile is-child notification">                
-                <p class="title"><a href="https://cavascripts.netlify.app/" target="_blank">CavaScripts Website</a></p>
-                <!-- <p class="subtitle is-6">Website</p> -->
-                <figure class="is-3by2">
-                  <img class="modal-trigger" data-target="project-1-modal" src="img/projects/cavascripts_home.png" />
-                </figure>
-              </article>
+          <li class="role reveal">
+            <p class="role-when"><time datetime="2024-04">Apr 2024</time> - <time datetime="2024-09">Sep 2024</time></p>
+            <div class="role-body">
+              <h3 class="role-what">Web Developer <span class="role-at">Components Engine</span></h3>
+              <p class="role-where">Internship · On-site · Cesena, Italy</p>
+              <p class="role-about">Interactive 2D/3D spare-parts catalogue software used by 600+ manufacturing,
+                agriculture and industrial companies worldwide.</p>
+              <ul class="notes">
+                <li>Catalogue platform features in AngularJS and C#/.NET.</li>
+                <li>3D visualisation with BabylonJS, so customers could explore parts in the browser instead of reading
+                  a diagram.</li>
+                <li>Module work and interface improvements across the catalogue management system.</li>
+              </ul>
+              <ul class="chips">
+                <li>AngularJS</li>
+                <li>C#</li>
+                <li>.NET</li>
+                <li>BabylonJS</li>
+              </ul>
             </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title"><a href="https://mooncalls.netlify.app/" target="_blank">Mooncalls Website</a></p>
-                <figure class="is-4by3">
-                  <img class="modal-trigger" data-target="project-2-modal" src="img/projects/mooncalls_home.png" />
-                </figure>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">MangaTime Platform</p>
-                <figure class="is-4by3">
-                  <img class="modal-trigger" data-target="project-3-modal" src="img/projects/mangatime_0.png">
-                </figure>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tile is-ancestor">
-        <div class="tile is-vertical is-12">
-          <div class="tile">
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title"><a href="https://swordio.onrender.com/" target="_blank">SwordIo GUI</a></p>
-                <figure class="is-4by3">
-                  <img class="modal-trigger" data-target="project-4-modal" src="img/projects/SwordIo_home.png" />
-                </figure>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title"><a href="https://chromewebstore.google.com/detail/nexitab/pdomgbhdmchigaijnijlhjmpndcodikc" target="_blank">NexiTab</a></p>
-                <figure class="is-4by3">
-                  <img class="modal-trigger" data-target="project-5-modal" src="img/projects/nexitab_1.png" />
-                </figure>
-              </article>
-            </div>
-            <!-- <div class="tile is-parent">
-                <article class="tile is-child notification">
-                  <p class="title">Project title</p>
-                  <figure class="image is-4by3">
-                    <img class="modal-trigger" data-target="project-6-modal" src="img/project-6-cover.png">
-                  </figure>
-                </article>
-              </div>  -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+          </li>
 
-  <!-- training -->
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Training</h1>
-      <hr />
-      <div class="card">
-        <div class="flex card-content">
-          <img src="img/training/python.jpg" alt="" />
-          <div class="content">
-            <a href="https://www.udemy.com/course/complete-python-developer-zero-to-mastery/" target="_blank">
-              <p class="title is-4">
-                Complete Python Developer in 2023: Zero to Mastery
-              </p>
+          <li class="role reveal">
+            <p class="role-when"><time datetime="2021-03">Mar 2021</time> - <time datetime="2022-09">Sep 2022</time></p>
+            <div class="role-body">
+              <h3 class="role-what">Founder &amp; Developer <span class="role-at">CavaScripts</span></h3>
+              <p class="role-where">Self-employed · San Mauro Pascoli, Italy</p>
+              <p class="role-about">A paid Chrome extension for automating online purchases, and everything a paid
+                product needs around it.</p>
+              <ul class="notes">
+                <li>Built and launched the extension in HTML, CSS and JavaScript.</li>
+                <li>Authentication dashboard with Stripe for subscriptions and billing.</li>
+                <li>Real-time stock monitoring through custom Python scrapers and an alerting system.</li>
+                <li>Ran the whole lifecycle - development, deployment, payments and customer support.</li>
+              </ul>
+              <ul class="chips">
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Stripe</li>
+                <li>Chrome Extensions</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ══ about ══ -->
+    <section class="sec" id="about">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="eyebrow">About</p>
+          <h2 class="sec-title">Shipping, not just writing code</h2>
+        </div>
+
+        <div class="about">
+          <div class="about-me reveal">
+            <div class="about-text">
+              <p>I'm a full-stack engineer in Dublin. At work that means backend services and AI-powered features for a
+                flash-sale e-commerce platform, plus the React that sits in front of them.</p>
+              <p>Before that, 2D/3D catalogue software in Italy - and, while still at school, a couple of years running
+                my own paid Chrome extension. That's where I learned that writing the code is the easy half: releases,
+                billing, support tickets and monitoring are the rest of it.</p>
+              <p>Most of my side projects start because I wanted the thing to exist. Outside the editor I'm in the gym,
+                printing parts I probably don't need, and slowly automating the flat.</p>
+            </div>
+          </div>
+
+          <div class="about-side reveal">
+            <div class="panel">
+              <h3 class="panel-title">Toolbox</h3>
+              <dl class="tool">
+                <div>
+                  <dt>Languages</dt>
+                  <dd>Python · JavaScript · TypeScript · Kotlin · C# · PHP · SQL · HTML · CSS</dd>
+                </div>
+                <div>
+                  <dt>Frameworks</dt>
+                  <dd>Django · FastAPI · React · Jetpack Compose · AngularJS · .NET · Node.js · BabylonJS</dd>
+                </div>
+                <div>
+                  <dt>Tools</dt>
+                  <dd>Git · GitHub · GitLab · Docker · Datadog · Firebase · Stripe · WordPress</dd>
+                </div>
+                <div>
+                  <dt>Around it</dt>
+                  <dd>REST APIs · CI/CD · e-commerce · AI/ML features · 3D visualisation</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="panel">
+              <h3 class="panel-title">Education</h3>
+              <p class="edu-what">Diploma in Informatics</p>
+              <p class="edu-where">ITT Blaise Pascal · Cesena, Italy</p>
+              <p class="edu-when"><time datetime="2014-09">2014</time> - <time datetime="2019-06">2019</time></p>
+            </div>
+
+            <div class="panel">
+              <h3 class="panel-title">Off the clock</h3>
+              <ul class="chips">
+                <li>Training</li>
+                <li>Home automation</li>
+                <li>3D printing</li>
+                <li>Hardware</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ contact ══ -->
+    <section class="sec sec-end" id="contact">
+      <div class="wrap">
+        <div class="end reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 class="end-line">Got something worth building? I'd like to hear about it.</h2>
+          <a class="end-mail" href="mailto:andrea.cavalluzzo2000@gmail.com">andrea.cavalluzzo2000@gmail.com</a>
+          <div class="end-links">
+            <a href="https://github.com/AndreaCaval" target="_blank" rel="noopener">
+              <svg aria-hidden="true">
+                <use href="#i-github" />
+              </svg>GitHub
             </a>
-            <p class="subtitle is-6">
-              How to become a Python 3 Developer and get hired! Build 12+ projects, learn Web Development, Machine
-              Learning + more!
-            </p>
-            <div class="flex">
-              <p><b>Udemy Course</b></p>
-              <p>In progress...</p>
-            </div>
+            <a href="https://www.linkedin.com/in/andrea-cavalluzzo-a0578b251" target="_blank" rel="noopener">
+              <svg aria-hidden="true">
+                <use href="#i-linkedin" />
+              </svg>LinkedIn
+            </a>
+            <a href="Curriculum_2026.pdf" download>
+              <svg aria-hidden="true">
+                <use href="#i-file" />
+              </svg>Curriculum
+            </a>
           </div>
         </div>
       </div>
-      <br />
-      <div class="card">
-        <div class="flex card-content">
-          <img src="img/training/flutter.jpg" alt="" />
-          <div class="content">
-            <a href="https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/" target="_blank">
-              <p class="title is-4">
-                Flutter & Dart - The Complete Guide [2023 Edition]
-              </p>
-            </a>
-            <p class="subtitle is-6">
-              A Complete Guide to the Flutter SDK & Flutter Framework for
-              building native iOS and Android apps
-            </p>
-            <div class="flex">
-              <p><b>Udemy Course</b></p>
-              <p>In progress...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br />
-      <div class="card">
-        <div class="flex card-content">
-          <img src="img/training/nodejs.jpg" alt="" />
-          <div class="content">
-            <a href="https://www.udemy.com/course/complete-nodejs-developer-zero-to-mastery/" target="_blank">
-              <p class="title is-4">Complete NodeJS Developer in 2023</p>
-            </a>
-            <p class="subtitle is-6">
-              Learn from real NodeJS experts! Includes REALLY Advanced NodeJS.
-              Express, GraphQL, REST, MongoDB, SQL, MERN + much more
-            </p>
-            <div class="flex">
-              <p><b>Udemy Course</b></p>
-              <p>In progress...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br />
-      <div class="card">
-        <div class="flex card-content">
-          <img src="img/training/react.jpg" alt="" />
-          <div class="content">
-            <a href="https://www.udemy.com/course/complete-react-developer-zero-to-mastery/" target="_blank">
-              <p class="title is-4">Complete React Developer in 2023</p>
-            </a>
-            <p class="subtitle is-6">
-              Updated! Become a Senior React Developer. Build a massive
-              E-commerce app with Redux, Hooks, GraphQL, Stripe, Firebase
-            </p>
-            <div class="flex">
-              <p><b>Udemy Course</b></p>
-              <p>Completed</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br />
-      <div class="card">
-        <div class="flex card-content">
-          <img src="img/training/web.jpg" alt="" />
-          <div class="content">
-            <a href="https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/" target="_blank">
-              <p class="title is-4">
-                The Complete Web Developer in 2023: Zero to Mastery
-              </p>
-            </a>
-            <p class="subtitle is-6">
-              Learn to code and become a Web Developer in 2023 with HTML, CSS,
-              Javascript, React, Node.js, Machine Learning & more!
-            </p>
-            <div class="flex">
-              <p><b>Udemy Course</b></p>
-              <p>Completed</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- education -->
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Education</h1>
-      <hr />
-      <div class="card">
-        <div class="card-content">
-          <div class="content">
-            <p class="title is-4">ITT Blaise Pascal</p>
-            <p class="subtitle is-6">
-              Informatics - <time datetime="2016-9">September 2014</time> -
-              <time datetime="2019-9">June 2019</time>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- contact -->
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Contact</h1>
-      <hr />
-      <nav class="level">
-        <div class="level-item has-text-centered">
-          <div>
-            <a href="https://github.com/AndreaCaval" target="_blank" class="icon is-large">
-              <i class="fab fa-2x fa-github"></i>
-            </a>
-            <p class="heading">
-              <a href="https://github.com/AndreaCaval">github.com/AndreaCaval</a>
-            </p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <a href="mailto:andrea.cavalluzzo@resellhm.com" class="icon is-large">
-              <i class="fas fa-2x fa-envelope"></i>
-            </a>
-            <p class="heading">
-              <a href="mailto:andrea.cavalluzzo@resellhm.com">andrea.cavalluzzo2000@gmail.com</a>
-            </p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <a target="_blank" href="https://www.linkedin.com/in/andrea-cavalluzzo-a0578b251" class="icon is-large">
-              <i class="fab fa-2x fa-linkedin-in"></i>
-            </a>
-            <p class="heading">
-              <a href="https://www.linkedin.com/in/andrea-cavalluzzo-a0578b251">linkedin</a>
-            </p>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </section>
-
-  <!-- Modals -->
-  <!-- CavaScripts Website -->
-  <div id="project-1-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <a class="modal-card-title" href="https://cavascripts.netlify.app/" target="_blank">
-          <p class="modal-card-title">Cavascripts Website -></p>
-        </a>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-1-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/cavascripts_home.png" />
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/cavascripts_sites.png" />
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/cavascripts_success.png" />
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/cavascripts_faq.png" />
-          </figure>
-        </div>
-
-        <div class="content">
-          <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-          </div>
-        </div>
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-  <!-- MoonCalls Website -->
-  <div id="project-2-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <a class="modal-card-title" href="https://mooncalls.netlify.app/" target="_blank">
-          <p>Moon Calls Website -></p>
-        </a>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-2-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/mooncalls_home.png" />
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/mooncalls_services.png" />
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/mooncalls_faq.png" />
-          </figure>
-        </div>
-
-        <div class="content">
-          <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-          </div>
-        </div>
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-  <!-- MangaTime Platform -->
-  <div id="project-3-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <a class="modal-card-title">
-          <p>MangaTime Platform</p>
-        </a>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-3-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/mangatime_1.png" />
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/mangatime_2.png" />
-          </figure>
-        </div>
-
-        <div class="content">
-          <div class="tags">
-            <span class="tag">Angular</span>
-            <span class="tag">NodeJS</span>
-            <span class="tag">Python</span>
-            <span class="tag">MongoDB</span>
-            <span class="tag">Docker</span>
-          </div>
-        </div>
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-  <!-- CavaScripts Work -->
-  <div id="project-10-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <a class="modal-card-title" href="https://cavascripts.netlify.app/" target="_blank">
-          <p>Cavascripts -></p>
-        </a>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <p class="modal-card-body-title">Experience Overview:</p>
-        <p class="modal-card-body-indent">
-          I led the development and management of a highly regarded Chrome
-          extension designed to streamline online product purchases, ensuring
-          a seamless and user-friendly experience.
-        </p>
-        <p class="modal-card-body-title">
-          Development of the Chrome Extension:
-        </p>
-        <p class="modal-card-body-indent">
-          I used HTML, CSS, and JavaScript to create a complete Chrome
-          extension that allowed users to automate the purchasing process on
-          selected websites. This involved designing the user interface,
-          implementing automatic purchasing features, and optimizing
-          performance to ensure a smooth user experience.
-        </p>
-        <p class="modal-card-body-title">Product Monitoring with Python:</p>
-        <p class="modal-card-body-indent">
-          I developed a system for monitoring product availability and stock
-          on specific websites using Python. This enabled users to receive
-          real-time notifications about product availability, significantly
-          improving their efficiency during the purchasing process.
-        </p>
-        <p class="modal-card-body-title">
-          Communication and Notifications via Discord:
-        </p>
-        <p class="modal-card-body-indent">
-          I utilized Discord as a communication platform to interact with
-          customers and provide instant assistance. Additionally, I
-          implemented Discord webhooks to send real-time notifications related
-          to product monitoring, ensuring that users were always informed
-          about the latest availability.
-        </p>
-        <p class="modal-card-body-title">Sales through External Dashboard:</p>
-        <p class="modal-card-body-indent">
-          I used an existing external dashboard to manage subscriptions for
-          the use of the extension. This dashboard simplified the sales
-          process and subscription management, offering clear and detailed
-          information about subscriptions and payment options.
-        </p>
-        <p class="modal-card-body-title">Integration with Stripe:</p>
-        <p class="modal-card-body-indent">
-          I successfully managed the integration of the Stripe payment system
-          to process payments for extension subscriptions, ensuring secure and
-          convenient transactions for users.
-        </p>
-
-        <div class="content">
-          <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Python</span>
-          </div>
-        </div>
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-  <!-- SwordIo GUI -->
-  <div id="project-4-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <a class="modal-card-title" href="https://swordio.onrender.com/" target="_blank">
-          <p>SwordIo GUI -></p>
-        </a>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-4-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/SwordIo_home.png" />
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/SwordIo_nft.png" />
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/SwordIo_profiles.png" />
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/SwordIo_profiles_new.png" />
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/SwordIo_retailer.png" />
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/SwordIo_sneakers.png" />
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/SwordIo_sneakers_awlab.png" />
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/SwordIo_settings.png" />
-          </figure>
-        </div>
-        <div class="content">
-          <div class="tags">
-            <span class="tag">React</span>
-          </div>
-        </div>
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-  <!-- NexiTab -->
-  <div id="project-5-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <a class="modal-card-title"
-          href="https://chromewebstore.google.com/detail/nexitab/pdomgbhdmchigaijnijlhjmpndcodikc" target="_blank">
-          <p>NexiTab -></p>
-        </a>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-5-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/nexitab_1.png" />
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/projects/nexitab_3.png" />
-          </figure>
-        </div>
-        <div class="content">
-          <div class="tags">
-            <span class="tag">React</span>
-          </div>
-        </div>
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-
-
-  <!-- footer -->
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        <a href="https://github.com/mmacneil/devfolio" target="_blank" class="icon has-text-primary">
-          <i class="fab fa-github"></i> <strong>devfolio</strong></a>
-      </p>
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <p>Dublin, Ireland</p>
+      <p>Hand-built with HTML, CSS and a little JavaScript</p>
+      <p>© <span id="year">2026</span> Andrea Cavalluzzo</p>
     </div>
   </footer>
 
-  <script src="js/bundle.js"></script>
+  <!-- screenshot viewer -->
+  <div class="box" id="box" hidden>
+    <button class="box-close" type="button" id="box-close" aria-label="Close">
+      <span aria-hidden="true">✕</span>
+    </button>
+    <figure class="box-fig">
+      <img id="box-img" src="" alt="" />
+      <figcaption id="box-cap"></figcaption>
+    </figure>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>
